@@ -1,12 +1,8 @@
-Simple and minimal radicale container with default SSL support baked in.
-Requires further configuration in config file. (config, collections locations and SSL setting won't come into effect).
-It expects certificates files under /etc/letsencrypt/live/HOSTNAME/
+Simple and minimal radicale container.
+It should work out of the box, but further configuration is hugly advised. (config, collections locations and SSL setting won't come into effect). You cannot change config file name or location.
 
 Volumes:
-/storage - main storage directory containing configuration file and collections
+/storage - default directory containing configuration file and collections
 
-Enviroment variables:
-HOSTNAME - your server hostname 
-
-Example usage: docker run --name=radicale -p 5232:5232 -v /path/to/your/dir:/storage -v /etc/letsencrypt:/etc/letsencrypt -e HOSTNAME=your.host.name --restart unless-stopped kamileg/radicale-minimal
+Example usage: docker run --name=radicale -p 5232:5232 -v /path/to/your/dir:/storage --restart unless-stopped kamileg/radicale-minimal
 
