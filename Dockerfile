@@ -1,4 +1,5 @@
 FROM python:3-slim
+LABEL maintainer="kamilj@tutanota.com"
 RUN mkdir /storage
 COPY radicale.conf /storage/radicale.conf
 RUN python3 -m pip install radicale
